@@ -10,3 +10,9 @@
 </head>
 
 <body>
+    <header>
+        <?php 
+        require_once __DIR__ . '/navbar.php';
+        require_once __DIR__ . '/notifications.php' 
+        ?>
+    </header>

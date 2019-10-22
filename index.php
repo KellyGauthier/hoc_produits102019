@@ -1,24 +1,16 @@
 <?php
 session_start();
+
 require_once 'data/produits.php';
-require_once 'layout/header.php';
-?>
 
-<header>
-    <?php require_once 'templates/navbar.php'; ?>
+require_once 'templates/header.php';
 
-    <?php require_once 'templates/notifications.php' ?>
-
-    <?php
-    foreach ($produits as $produit) {
-        if ($produit["homepage"]) {
-            require_once 'templates/jumbotron.php';
-        }
+foreach ($produits as $produit) {
+    if ($produit["homepage"]) {
+        require 'templates/produit/item_jumbotron.php';
     }
-    ?>
-</header>
+}
 
+require_once 'templates/newsletter/subscription_section.php';
 
-<?php require_once 'templates/newsletter.php' ?>
-
-<?php require_once 'layout/footer.php'; ?>
+require_once 'templates/footer.php';
